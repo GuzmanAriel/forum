@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import PageHome from './components/PageHome.vue'
+import PageHome from './pages/Home.vue'
 
 export default {
   name: 'App'
