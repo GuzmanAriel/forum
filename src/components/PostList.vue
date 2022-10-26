@@ -37,14 +37,10 @@ import sourceData from '@/data.json'
 import dayjs from 'dayjs'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import localizedDate from 'dayjs/plugin/localizedFormat'
-import AppDate from '@/components/AppDate'
 dayjs.extend(relativeTime)
 dayjs.extend(localizedDate)
 
 export default {
-  components: {
-    AppDate
-  },
   props: {
     posts: {
       required: true,
