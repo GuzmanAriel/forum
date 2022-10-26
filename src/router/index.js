@@ -1,7 +1,7 @@
 import Home from '@/pages/Home'
-import { createRouter, createWebHistory } from 'vue-router'
 import ThreadShow from '@/pages/ThreadShow'
 import NotFound from '@/pages/NotFound'
+import { createRouter, createWebHistory } from 'vue-router'
 import sourceData from '@/data.json'
 
 const routes = [
@@ -15,9 +15,10 @@ const routes = [
     name: 'ThreadShow',
     component: ThreadShow,
     props: true,
-    beforeRouteEnter (to, from, next) {
+    beforeEnter (to, from, next) {
+      // check if thread exists
       const threadExists = sourceData.threads.find(thread => thread.id === to.params.id)
-      // if thread exists
+      // if exists continue
       if (threadExists) {
         return next()
       } else {
@@ -29,6 +30,7 @@ const routes = [
           hash: to.hash
         })
       }
+      // if doesnt exist redirect to not found
     }
   },
   {
