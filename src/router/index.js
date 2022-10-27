@@ -21,7 +21,8 @@ const routes = [
   {
     path: '/category/:id',
     name: 'Category',
-    component: Category
+    component: Category,
+    props: true
   },
   {
     path: '/thread/:id',
